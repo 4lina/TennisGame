@@ -50,5 +50,3 @@ A
 Current Score: 40:15
 Player A wins the game!
 ```
-
-This console-based tennis simulator allows users to interactively play out a tennis game by entering commands to score points for each player. The game updates the score in real-time and announces the winner based on standard tennis rules. Feel free to take your time, demonstrate your coding skills, and show creativity in your solution. Once completed, please share the link to your repository containing the solution with us.
