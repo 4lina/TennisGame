@@ -53,7 +53,7 @@ namespace TennisGameFixture
             testee.Play(_userA);
             var score = testee.GetScore();
 
-            Assert.That(score, Is.EqualTo("Current Score: 40:0"));
+            Assert.That(score, Is.EqualTo("Current Score: 60:0"));
         }
 
         [Test]

@@ -11,15 +11,19 @@ internal class Program
 
         while (!game.IsGameWon())
         {
-            var winnerOfTheSet = Console.ReadLine()?.ToLower();
-            if (!string.IsNullOrEmpty(winnerOfTheSet))
+            var winnerOfThePoint = Console.ReadLine()?.ToLower();
+            if (IsInputValid(winnerOfThePoint))
             {
-                game.Play(winnerOfTheSet);
+                game.Play(winnerOfThePoint);
+                game.DisplayScore();
             }
-
-            Console.WriteLine(game.GetScore());
+            else
+            {
+                Console.WriteLine(Resources.UserInteraction_ThisPlayerDoesNotExist);
+            }
         }
-
-        Console.WriteLine(string.Format(Resources.UserInteraction_PlayerWon, game.GetWinner(), CultureInfo.InvariantCulture));
     }
+
+    private static bool IsInputValid(string winnerOfThePoint)
+        => !string.IsNullOrEmpty(winnerOfThePoint) && winnerOfThePoint == "a" || winnerOfThePoint == "b";
 }
