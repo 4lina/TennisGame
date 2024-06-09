@@ -5,8 +5,8 @@ namespace TennisGameFixture
 {
     public class GameFixture
     {
-        private string _userA = "A";
-        private string _userB = "B";
+        private string _userA = "a";
+        private string _userB = "b";
 
         [Test]
         public void Play_EnterPlayerA_ScoreIsUpdated()

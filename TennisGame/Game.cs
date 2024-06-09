@@ -15,11 +15,11 @@ namespace TennisGame
         {
             switch (playerScored)
             {
-                case "A":
+                case "a":
                     _scorePointsA++;
                     _scoreA = MapScore(_scorePointsA, _scorePointsB);
                     break;
-                case "B":
+                case "b":
                     _scorePointsB++;
                     _scoreB = MapScore(_scorePointsB, _scorePointsA);
                     break;
@@ -30,6 +30,15 @@ namespace TennisGame
         }
 
         public string GetScore() => string.Format(Resources.UserInteraction_Score, _scoreA, _scoreB, CultureInfo.InvariantCulture);
+
+        /// <summary>
+        /// One player has 4 points or one player is 2 points ahead after a deuce
+        /// </summary>
+        /// <returns></returns>
+        public bool IsGameWon() => _scorePointsA >= 4 && _scorePointsA > _scorePointsB + 1
+                                || _scorePointsB >= 4 && _scorePointsB > _scorePointsA + 1;
+
+        public string GetWinner() => _scorePointsA > _scorePointsB ? "A" : "B";
 
 
         private string MapScore(int player, int opportunent)
