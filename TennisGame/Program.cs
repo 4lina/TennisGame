@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using TennisGame;
+using TennisGame.Properties;
+
+Console.WriteLine(Resources.UserInteraction_StartNewGame);
