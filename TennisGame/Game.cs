@@ -40,9 +40,40 @@ namespace TennisGame
                 case 1: return "15";
                 case 2: return "30";
                 case 3: return "40";
+                case 4: return HandleDeuceAndAdvantage(opportunent);
+                case 5: return "60";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private string HandleDeuceAndAdvantage(int opportunent)
+        {
+            // advantage
+            if (opportunent == 3)
+            {
+                return "AD";
             }
 
-            return string.Empty;
+            //deuce
+            if (opportunent == 4)
+            {
+                ResetScoresToTie();
+            }
+
+            //won
+            return "40";
+        }
+
+        private void ResetScoresToTie()
+        {
+            _scoreA = "40";
+            _scoreB = "40";
+
+            // in the unlike case that the game would go forever
+            // reset after a deuce to avoid overload of integer
+            _scorePointsA = 3;
+            _scorePointsB = 3;
         }
 
     }
