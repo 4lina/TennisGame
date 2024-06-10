@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using TennisGame;
+﻿using TennisGame;
 using TennisGame.Properties;
 
 internal class Program
